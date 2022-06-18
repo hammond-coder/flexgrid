@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>CSS Flexbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        font-family: 'Lexend Deca', sans-serif;
+        font-size:15px;
+        margin: 0;
+        padding: 0;
+
+	    animation:anime 0.4s ease-in-out;
+    }
+    @keyframes anime{
+	    0%{opacity:0}
+	    100%{opacity:1}
+    }
+    .active{
+        color:hsl(31, 77%, 52%);
+    }
+    nav{
+        text-align:center;
+        margin-top: 1rem;
+    }
+    nav a {
+        text-decoration: none;
+        color:hsl(179, 100%, 13%);
+        font-size: 2rem;
+        padding:0.5rem;
+    }
+    nav a:hover{
+        color: hsl(0, 1%, 79%);
+        transition: 0.3s ease-in-out;
+    }
+
+    h1{
+        color: hsl(0, 0%, 95%);
+        font-family: 'Big Shoulders Display', cursive;
+        margin:2rem auto;
+    }
+
+    p{
+        color:hsla(0, 0%, 100%, 0.75);
+        margin:2rem auto;
+        line-height: 1.7;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        margin:4rem 2rem;
+    }
+    
+    .col-1{
+        width:17rem;
+        background-color:hsl(31, 77%, 52%);
+        padding:2rem 2rem;
+        border-radius:10px 0 0 10px;
+    }
+    .col-2{
+        width:17rem;
+        background-color:hsl(184, 100%, 22%);
+        padding:2rem 1.4rem;
+    }
+    .col-3{
+        width:17rem;
+        background-color:hsl(179, 100%, 13%);
+        padding:2rem 1.5rem;
+        border-radius:0 10px 10px 0;
+    }
+    
+    button{
+        margin:5rem auto 2rem auto;
+        background-color: hsl(0, 0%, 95%);
+        outline:none;
+        border: none;
+        border-radius: 1.5rem;
+        padding:0.8rem;
+        text-align: center;
+        font-family: 'Lexend Deca', sans-serif;
+        width:8rem;
+    }
+    button:hover{
+        cursor: pointer;
+        background: none; 
+        color:hsla(0, 0%, 100%, 0.75);
+        border:2px solid hsl(0, 0%, 95%);
+        transition: 0.4s ease-in-out;
+    }
+    .btn-1{
+        color:hsl(31, 77%, 52%);
+    }
+    .btn-2{
+        color:hsl(184, 100%, 22%);
+    }
+    .btn-3{
+        color:hsl(179, 100%, 13%);
+    }
+
+    @media screen and (max-width:375px){
+        main{
+            margin:4rem 1rem;
+            flex-wrap:wrap;
+        }
+        .col-1, .col-2, .col-3{
+            width: 100%;
+            border-radius: 0;
+        }
+        .col-1{
+           border-radius:10px 10px 0 0;
+        }
+        .col-3{
+            border-radius: 0 0 10px 10px;
+        }
+    }
+        @media screen and (min-width:376px) and (max-width:768px){
+            main{
+            margin:4rem 3rem;
+            flex-wrap:wrap;
+        }
+        .col-1, .col-2, .col-3{
+            width: 100%;
+            border-radius: 0;
+        }
+        .col-1{
+           border-radius:10px 10px 0 0;
+    }
+        .col-3{
+            border-radius: 0 0 10px 10px;
+        }
+}
+
+</style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="active">FLEXBOX</a>
+        <a href="grid.html">GRID</a>
+    </nav>
+
+<main>
+    <div class="col-1">
+        <img src="images/icon-sedans.svg">
+        <h1>SEDANS</h1>
+        <p>Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.</p>
+        <button class="btn-1">Learn More</button>
+    </div>
+    <div class="col-2">
+        <img src="images/icon-suvs.svg">
+        <h1>SUVS</h1>
+        <p>Take an SUV for its spacious interior, power, and versatality. Perferct for your next family vacation and off-road adventures.</p>
+        <button>Learn More</button>
+    </div>
+    <div class="col-3">
+        <img src="images/icon-luxury.svg">
+        <h1>LUXURY</h1>
+        <p>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and drive in style.</p>
+        <button>Learn More</button>
+    </div>
+</main>
+
+</body>
+</html>
